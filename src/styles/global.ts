@@ -55,4 +55,21 @@ export const GlobalStyle = createGlobalStyle`
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+  button.close-button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.4rem;
+  color: var(--red);
+  transition: filter 0.2s;
+  transform: rotate(45deg);
+  border: none;
+  background: transparent;
+
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
 `;
