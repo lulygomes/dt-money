@@ -3,6 +3,7 @@ import { Dashboard } from './components/Dashboard';
 import { Header } from './components/Header';
 import { createServer, Model } from 'miragejs';
 import { NewTransaction } from './components/Modal'
+import { TransactionsProvider } from './context/TransactionsContext';
 
 import { GlobalStyle } from './styles/global';
 
@@ -62,7 +63,7 @@ export function App() {
   }, [])
 
   return (
-    <>
+    <TransactionsProvider>
       <Header handleToOpenNewTrasanction={handleToOpenModal} />
       <Dashboard />
       <GlobalStyle />
@@ -70,7 +71,7 @@ export function App() {
         isOpen={isNewTransactionOpen}
         onRequestClose={handleToCloseModal}
       />
-    </>
+    </TransactionsProvider>
   );
 }
 
